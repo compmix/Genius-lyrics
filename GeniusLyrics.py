@@ -14,15 +14,16 @@ class GeniusLyrics:
 		response = requests.get("http://api.genius.com/search?access_token=" + self.client_access_token + "&q=" + song_query , headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36'})
 		search_json = json.loads(response.text)
 		song_url = search_json['response']['hits'][0]['result']['url']
+		
 		response = requests.get(song_url, headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36'})
 		soup = BeautifulSoup(response.text, "lxml")
 		soup = soup.find("div", class_="song_body-lyrics")
+		
 		soup.find("div", class_="dfp_unit").decompose()
 		soup.find("share-buttons").decompose()
 		soup.find(class_="u-xx_large_top_margin u-bottom_margin").decompose()
-
-		#print(soup.prettify())
-		lyrics = soup.get_text()
+		
+		lyrics = soup.get_text().strip()
 		return lyrics
 
 
