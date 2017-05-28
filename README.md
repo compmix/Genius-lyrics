@@ -5,7 +5,7 @@ GeniusLyrics is a Genius.com lyrics scraper written in [Python](https://www.pyth
 ### How do I use it standalone?
 	- get a Genius API client access token
 	- put it into a token.ini file in the same directory
-	- run it with Python 3
+	- run it with Python 3.6 or higher (because of Unicode issues)
 
 ### How do I use its functions?
 	- initialize GeniusLyrics with the token
