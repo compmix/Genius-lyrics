@@ -1,4 +1,3 @@
-#from rauth import OAuth2Service
 import json
 
 from urllib.parse import urljoin
@@ -6,7 +5,7 @@ from bs4 import BeautifulSoup
 import requests
 
 
-class GeniusLyrics:
+class geniuslyrics:
     def __init__(self, client_access_token):
         self.client_access_token = client_access_token
 
@@ -38,7 +37,7 @@ class GeniusLyrics:
 if __name__ == '__main__':
     f = open('token.ini', 'r+')
     tok = f.readline()
-    genius = GeniusLyrics(tok)
+    genius = geniuslyrics(tok)
 
     while True:
         query = input('What song to search lyrics for? ')
