@@ -1,4 +1,4 @@
-from rauth import OAuth2Service
+#from rauth import OAuth2Service
 import json
 
 from urllib.parse import urljoin
@@ -29,7 +29,7 @@ class GeniusLyrics:
 
         # Clean up html
         soup = BeautifulSoup(response.text, "html.parser")
-        soup = soup.find("lyrics", class_="lyrics")
+        soup = soup.find("div", class_="lyrics")
         lyrics = soup.get_text().strip()
 
         return lyrics
