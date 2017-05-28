@@ -8,6 +8,7 @@ GeniusLyrics is a Genius.com lyrics scraper written in [Python](https://www.pyth
 	- run it with Python 3.6 or higher (because of Unicode issues)
 
 ### How do I use its functions?
+	- use pip install geniuslyrics
 	- initialize GeniusLyrics with the token
 	- song_url = GeniusLyrics.search(search_query) # grabs the URL of the top search result
 	- lyrics = GeniusLyrics.scrape(song_url) # returns the lyrics, cleaned and scraped
